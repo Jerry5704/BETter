@@ -2,30 +2,39 @@ import json
 import os
 
 from datetime import datetime
+from pathlib import Path
 
-from stsScrapper import stsScrapper
+from stakeholderScrapper import stakeholderScrapper
 
-data_json_path = "data.json"
+now = str(datetime.now())
+data_json_path = "Bets/" + now + "/data.json"
 
 def create_json_file_and_add_metadata():
-# os.mkdir("Bets/" + str(datetime.now()))
+    os.mkdir("Bets/" + now)
+    # Path(data_json_path).touch()
     with open(data_json_path, "w") as json_data_file:
-        stakeholder_count = input("How much stakeholders?: ")
         sport_name = input("What sport is it?: ")
         metadata_json = {"metadata": 
-                                        {"stakeholders_count": stakeholder_count, 
+                                        { 
                                         "sport_type": sport_name
                                         }, 
                         "bets": {}}
         json.dump(metadata_json, json_data_file)
-        return stakeholder_count
 
-def create_stakeholder(count):
-    scrapper = stsScrapper()
-    name_of_stakeholder = scrapper.name_of_stakeholder
+def get_avaiable_stakeholders():
+    available_stakeholders = []
+    with open("available_stakeholders.json", "r") as json_file:
+        json_data = json.load(json_file)
+        for stakeholder in json_data.items():
+            available_stakeholders.append(stakeholderScrapper(stakeholder[0], stakeholder[1]))
+        return available_stakeholders
+
+def create_stakeholders():
+    stakeholders = get_avaiable_stakeholders()
     with open(data_json_path) as json_data_file:
         json_data = json.load(json_data_file)
-    json_data["bets"][name_of_stakeholder] = scrapper.bets
+        for stakeholder in stakeholders:
+            json_data["bets"][stakeholder.name_of_stakeholder] = stakeholder.bets
     with open(data_json_path, "w") as json_data_file:
         json.dump(json_data, json_data_file)
 
@@ -34,6 +43,5 @@ def print_json_file():
         json_data = json.load(json_data_file)
         print(json_data)
 
-count = create_json_file_and_add_metadata()
-create_stakeholder(count)
-print_json_file()
+create_json_file_and_add_metadata()
+create_stakeholders()
