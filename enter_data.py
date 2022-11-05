@@ -2,7 +2,6 @@ import json
 import os
 
 from datetime import datetime
-from pathlib import Path
 
 from stakeholderScrapper import stakeholderScrapper
 
@@ -11,7 +10,6 @@ data_json_path = "Bets/" + now + "/data.json"
 
 def create_json_file_and_add_metadata():
     os.mkdir("Bets/" + now)
-    # Path(data_json_path).touch()
     with open(data_json_path, "w") as json_data_file:
         sport_name = input("What sport is it?: ")
         metadata_json = {"metadata": 
