@@ -1,6 +1,7 @@
 import json
 import os
 
+print(os.listdir("/home/jerry/BETter/Bets")[0])
 with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] + "/data.json", "r") as json_file:
     json_data = json.load(json_file)
     with open("available_stakeholders.json", "r") as json_second_file:
@@ -25,9 +26,22 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
                     best_tuples[2][1] = stakeholder_name
             except Exception as e:
                 continue
+    best_yet = float(2)
     for date, best_odds in best_bets.items():
+        print(date)
+        print(best_odds)
         implied_win_probability = float()
         for odd in best_odds:
             implied_win_probability += 1/odd[0]
-        print(implied_win_probability)
+        if best_yet > implied_win_probability:
+            best_yet = implied_win_probability
+        if implied_win_probability < 1:
+            print(f"##############################################")
+            print(f"O KURWA MAMY TO - {implied_win_probability}")
+            print(f"##############################################")
+        else:
+            print(implied_win_probability)
+    print("#########")
+    print(best_yet)
+    print("#########")
         

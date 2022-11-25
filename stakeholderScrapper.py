@@ -1,17 +1,21 @@
-from selenium import webdriver
+import undetected_chromedriver.v2 as uc
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+
 
 from playerNameUnifier import PlayerNameUnifier
 
 import re
 import time
+import itertools
+import datetime
 
 class stakeholderScrapper():
     def __init__(self, name_of_stakeholder, url):
         self.bets = []
         self.name_of_stakeholder = name_of_stakeholder
         self.url = url
-        self.driver = webdriver.Chrome("/home/jerry/BETter/chromedriver")
+        self.driver = uc.Chrome()
 
         if self.name_of_stakeholder == "STS":
             self.driver.get(self.url)
@@ -19,6 +23,9 @@ class stakeholderScrapper():
         elif self.name_of_stakeholder == "Betcris":
             self.driver.get(self.url)
             self.betcris()
+        elif self.name_of_stakeholder == "Fuksiarz":
+            self.driver.get(self.url)
+            self.fuksiarz()
         else:
             print(self.name_of_stakeholder + " stakeholder not found!")
             self.bets.append("Not implemented yet!")
@@ -26,7 +33,7 @@ class stakeholderScrapper():
         playerNameUnifier = PlayerNameUnifier(self.bets)
         
     def sts(self):
-        bet_tabs = self.driver.find_element(By.ID, "prematch_1047000100184").find_elements(By.CLASS_NAME, "col3")
+        bet_tabs = self.driver.find_element(By.ID, "prematch_10470001002044").find_elements(By.CLASS_NAME, "col3")
         for tab in bet_tabs:
             unparsed_string = tab.find_element(By.CLASS_NAME, "subTable").get_attribute("innerHTML")
             stakes = [float(re.sub(r'[^0-9.]', '', line)) for line in unparsed_string.split('\n') if "<span>" in line]
@@ -108,6 +115,51 @@ class stakeholderScrapper():
             "b": ["X", float(stakes_draw[count]), False],
             "c": [names_b[count], float(stakes_b[count]), False]}))
             count += 1
+
+    def fuksiarz(self):
+        bet_tabs = self.driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[2]/div[3]/div/div/div[3]/partial[4]/div/div/div/div[2]/div[2]/div[3]").text.split('\n')
+        
+        # for x in bet_tabs:
+        #     print(x)
+
+        currentDateTime = datetime.datetime.now()
+        date = currentDateTime.date()
+        times = len(bet_tabs)/7
+        
+        # dates set
+        dates = [date.strftime("%Y")] * int(times)
+        months = [date[3:] for date in bet_tabs[1::7]]
+        days = [date[:2] for date in bet_tabs[1::7]]
+        hours = bet_tabs[::7]
+        for i in range(len(dates)):
+            dates[i] += "-" + months[i] + "-" + days[i] + " " + hours[i]
+
+        # player names set
+        # for x in bet_tabs[2::7]:
+        #     print(x.split("-")[1].lstrip(" "))
+        names_a = [matchup.split("-")[0].strip(" ") for matchup in bet_tabs[2::7]] 
+        names_c = [matchup.split("-")[1].lstrip(" ") for matchup in bet_tabs[2::7]] 
+        names_b = ["X"] * int(times)
+
+        # player odds set
+        odds_a = bet_tabs[3::7]
+        odds_b = bet_tabs[4::7]
+        odds_c = bet_tabs[5::7]
+
+        # insert into data.json 
+        for i in range(int(times)):
+            self.bets.append(({"date": dates[i],
+                    "a": [names_a[i], float(odds_a[i]), False],
+                    "b": [names_b[i], float(odds_b[i]), False],
+                    "c": [names_c[i], float(odds_c[i]), False]}))
+
+
+
+
+            
+
+
+
             
                 
             
