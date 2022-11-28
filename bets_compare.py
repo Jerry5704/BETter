@@ -2,6 +2,8 @@ import json
 import os
 
 print(os.listdir("/home/jerry/BETter/Bets")[0])
+# Tax 12%
+fucking_tax = 0.88
 with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] + "/data.json", "r") as json_file:
     json_data = json.load(json_file)
     with open("available_stakeholders.json", "r") as json_second_file:
@@ -10,8 +12,8 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
     best_bets = {}
     for stakeholder_name, stakeholder_dict in stakeholders:
         for day in json_data["bets"][stakeholder_name]:
-            stakeholder_dict[day["date"] + " " + day["a"][0] + " - " + day["c"][0]] = ((day["a"][1], stakeholder_name), (day["b"][1], stakeholder_name), (day["c"][1], stakeholder_name))
-            best_bets[day["date"] + " " + day["a"][0] + " - " + day["c"][0]] = [[day["a"][1], stakeholder_name], [day["b"][1], stakeholder_name], [day["c"][1], stakeholder_name]]
+            stakeholder_dict[day["date"] + " " + day["a"][0] + " - " + day["c"][0]] = ((day["a"][1] * fucking_tax, stakeholder_name), (day["b"][1] * fucking_tax, stakeholder_name), (day["c"][1] * fucking_tax, stakeholder_name))
+            best_bets[day["date"] + " " + day["a"][0] + " - " + day["c"][0]] = [[day["a"][1] * fucking_tax, stakeholder_name], [day["b"][1] * fucking_tax, stakeholder_name], [day["c"][1] * fucking_tax, stakeholder_name]]
     for name, best_tuples in best_bets.items():
         for stakeholder_name, stakeholder_dict in stakeholders:
             try:                
@@ -21,7 +23,7 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
                 if float(stakeholder_dict[name][1][0]) > best_tuples[1][0]:
                     best_tuples[1][0] = float(stakeholder_dict[name][1][0])
                     best_tuples[1][1] = stakeholder_name
-                if float(stakeholder_dict[name][2][0]) > best_tuples[2][0]:
+                if float(stakeholder_dict[name][2][0]) > best_tuples[2][0]: 
                     best_tuples[2][0] = float(stakeholder_dict[name][2][0])
                     best_tuples[2][1] = stakeholder_name
             except Exception as e:
@@ -35,6 +37,8 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
             implied_win_probability += 1/odd[0]
         if best_yet > implied_win_probability:
             best_yet = implied_win_probability
+            best_yet_date = date
+            best_yet_odds = best_odds
         if implied_win_probability < 1:
             print(f"##############################################")
             print(f"O KURWA MAMY TO - {implied_win_probability}")
@@ -43,5 +47,7 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
             print(implied_win_probability)
     print("#########")
     print(best_yet)
+    print(best_yet_date)
+    print(best_yet_odds)
     print("#########")
         

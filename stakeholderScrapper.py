@@ -44,32 +44,6 @@ class stakeholderScrapper():
                                "b": [names[2], stakes[1], False],
                                "c": [names[3], stakes[2], False]}))
     
-    def which_month(self, polish_month_name):
-        if polish_month_name == "Styczeń":
-            return "01"
-        elif polish_month_name == "Luty":
-            return "02"
-        elif polish_month_name == "Marzec":
-            return "03"
-        elif polish_month_name == "Kwiecień":
-            return "04"
-        elif polish_month_name == "Maj":
-            return "05"
-        elif polish_month_name == "Czerwiec":
-            return "06"
-        elif polish_month_name == "Lipiec":
-            return "07"
-        elif polish_month_name == "Sierpień":
-            return "08"
-        elif polish_month_name == "Wrzesień":
-            return "09"
-        elif polish_month_name == "Październik":
-            return "10"
-        elif polish_month_name == "Listopad":
-            return "11"
-        elif polish_month_name == "Grudzień":
-            return "12"
-
     def betcris(self):
         time.sleep(2)
         unparsed_list = self.driver.find_element(By.ID, "eventListBody").text.split('\n')
@@ -119,8 +93,8 @@ class stakeholderScrapper():
     def fuksiarz(self):
         bet_tabs = self.driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[2]/div[3]/div/div/div[3]/partial[4]/div/div/div/div[2]/div[2]/div[3]").text.split('\n')
         
-        # for x in bet_tabs:
-        #     print(x)
+        if "Idź do wydarzenia" in bet_tabs:
+            delete_idz_do_wydarzenia_in_fuksiarz(bet_tabs)
 
         currentDateTime = datetime.datetime.now()
         date = currentDateTime.date()
@@ -153,7 +127,43 @@ class stakeholderScrapper():
                     "b": [names_b[i], float(odds_b[i]), False],
                     "c": [names_c[i], float(odds_c[i]), False]}))
 
+    def which_month(self, polish_month_name):
+        if polish_month_name == "Styczeń":
+            return "01"
+        elif polish_month_name == "Luty":
+            return "02"
+        elif polish_month_name == "Marzec":
+            return "03"
+        elif polish_month_name == "Kwiecień":
+            return "04"
+        elif polish_month_name == "Maj":
+            return "05"
+        elif polish_month_name == "Czerwiec":
+            return "06"
+        elif polish_month_name == "Lipiec":
+            return "07"
+        elif polish_month_name == "Sierpień":
+            return "08"
+        elif polish_month_name == "Wrzesień":
+            return "09"
+        elif polish_month_name == "Październik":
+            return "10"
+        elif polish_month_name == "Listopad":
+            return "11"
+        elif polish_month_name == "Grudzień":
+            return "12"
 
+    def delete_idz_do_wydarzenia_in_fuksiarz(self, bet_tabs):
+            counter = 0
+            for line in range(len(bet_tabs)):
+                if bet_tabs[counter] == "Idź do wydarzenia":
+                    del bet_tabs[counter + 1]
+                    del bet_tabs[counter]
+                    del bet_tabs[counter - 1]
+                    del bet_tabs[counter - 2]
+                    del bet_tabs[counter - 3]
+                    counter -= 5
+                counter += 1
 
 
             
