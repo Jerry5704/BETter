@@ -94,7 +94,7 @@ class stakeholderScrapper():
         bet_tabs = self.driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[2]/div[3]/div/div/div[3]/partial[4]/div/div/div/div[2]/div[2]/div[3]").text.split('\n')
         
         if "Idź do wydarzenia" in bet_tabs:
-            delete_idz_do_wydarzenia_in_fuksiarz(bet_tabs)
+            self.delete_idz_do_wydarzenia_in_fuksiarz(bet_tabs)
 
         currentDateTime = datetime.datetime.now()
         date = currentDateTime.date()

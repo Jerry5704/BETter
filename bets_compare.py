@@ -2,8 +2,8 @@ import json
 import os
 
 print(os.listdir("/home/jerry/BETter/Bets")[0])
-# Tax 12%
-fucking_tax = 0.88
+# Tax 12% + 10%
+fucking_tax = 0.78
 with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] + "/data.json", "r") as json_file:
     json_data = json.load(json_file)
     with open("available_stakeholders.json", "r") as json_second_file:
@@ -45,9 +45,17 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
             print(f"##############################################")
         else:
             print(implied_win_probability)
-    print("#########")
+    print("")
+    print("##################################################################")
+    print("#####################            #################################")
+    print("#####################  BEST BET  #################################")
+    print("#####################            #################################")
+    print("##################################################################")
     print(best_yet)
     print(best_yet_date)
     print(best_yet_odds)
-    print("#########")
+    print("##################################################################")
+    print("##################################################################")
+    print("##################################################################")
+    print("")
         
