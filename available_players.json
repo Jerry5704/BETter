@@ -48,6 +48,29 @@
      "Kamerun": ["Kamerun"],
      "Brazylia": ["Brazylia"],
      "Szwajcaria": ["Szwajcaria"],
-     "Serbia": ["Serbia"]
+     "Serbia": ["Serbia"],
+     "Ponferradina": ["Ponferradina", "SD Ponferradina"],
+     "Burgos": ["Burgos"],
+     "Leganes": ["Leganes"],
+     "Mirandes": ["Mirandes", "CD Mirandes"],
+     "Oviedo": ["Oviedo", "Real Oviedo"],
+     "Las Palmas": ["Las Palmas", "UD Las Palmas"],
+     "Albacete": ["Albacete"],
+     "Saragossa": ["Saragossa", "Real Saragossa", "Zaragoza"],
+     "Huesca": ["Huesca", "SD Huesca"],
+     "Andorra": ["Andorra", "FC Andorra"],
+     "Cartagena": ["Cartagena", "FC Cartagena"],
+     "Villarreal B": ["Villarreal B", "Villarreal CF B"],
+     "Tenerife": ["Tenerife"],
+     "Alaves": ["Alaves", "Deportivo Alaves"],
+     "Eibar": ["Eibar", "SD Eibar"],
+     "Lugo": ["Lugo"],
+     "Gijon": ["Gijon", "Sporting Gijon"],
+     "Ibiza": ["Ibiza", "Ibiza Eivissa"],
+     "Santander": ["Santander", "Racing Santander"],
+     "Levante": ["Levante"],
+     "Malaga": ["Malaga", "Malaga CF"],
+     "Granada": ["Granada"]
+     
 
 }

@@ -33,7 +33,8 @@ class stakeholderScrapper():
         playerNameUnifier = PlayerNameUnifier(self.bets)
         
     def sts(self):
-        bet_tabs = self.driver.find_element(By.ID, "prematch_10470001002044").find_elements(By.CLASS_NAME, "col3")
+        # ToDo: find by something unique instead of prematch_*
+        bet_tabs = self.driver.find_element(By.CLASS_NAME, "bet_tab").find_elements(By.CLASS_NAME, "col3")
         for tab in bet_tabs:
             unparsed_string = tab.find_element(By.CLASS_NAME, "subTable").get_attribute("innerHTML")
             stakes = [float(re.sub(r'[^0-9.]', '', line)) for line in unparsed_string.split('\n') if "<span>" in line]
@@ -45,7 +46,7 @@ class stakeholderScrapper():
                                "c": [names[3], stakes[2], False]}))
     
     def betcris(self):
-        time.sleep(2)
+        time.sleep(5)
         unparsed_list = self.driver.find_element(By.ID, "eventListBody").text.split('\n')
         bets_list = []
         for line in unparsed_list:

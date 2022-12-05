@@ -1,10 +1,24 @@
 import json
 import os
 
-print(os.listdir("/home/jerry/BETter/Bets")[0])
+print()
+print("##################################################################")
+print("#####################                 ############################")
+print("#####################  GATHERED DATA  ############################")
+print("#####################                 ############################")
+print("##################################################################")
+print(sorted(os.listdir("/home/jerry/BETter/Bets"))[-1])
+print("__________________________________________________________________")
+print()
+
+print("##################################################################")
+print("#####################                 ############################")
+print("#####################    ALL BETS     ############################")
+print("#####################                 ############################")
+print("##################################################################")
 # Tax 12% + 10%
-fucking_tax = 0.78
-with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] + "/data.json", "r") as json_file:
+fucking_tax = 0.88
+with open("/home/jerry/BETter/Bets/" + sorted(os.listdir("/home/jerry/BETter/Bets"))[-1] + "/data.json", "r") as json_file:
     json_data = json.load(json_file)
     with open("available_stakeholders.json", "r") as json_second_file:
         json_second_data = json.load(json_second_file)
@@ -45,7 +59,8 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
             print(f"##############################################")
         else:
             print(implied_win_probability)
-    print("")
+    print("__________________________________________________________________")
+    print()
     print("##################################################################")
     print("#####################            #################################")
     print("#####################  BEST BET  #################################")
@@ -54,8 +69,6 @@ with open("/home/jerry/BETter/Bets/" + os.listdir("/home/jerry/BETter/Bets")[0] 
     print(best_yet)
     print(best_yet_date)
     print(best_yet_odds)
-    print("##################################################################")
-    print("##################################################################")
-    print("##################################################################")
-    print("")
+    print("__________________________________________________________________")
+    print()
         
