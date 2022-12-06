@@ -1,4 +1,10 @@
 {
+    "": [
+        ""
+    ],
+    "X": [
+        "X"
+    ],
     "Cracovia": [
         "Cracovia",
         "Cracovia"
@@ -221,7 +227,8 @@
         "Deportivo Alaves"
     ],
     "Eibar": [
-        "Eibar"
+        "Eibar",
+        "SD Eibar"
     ],
     "Lugo": [
         "Lugo"
@@ -231,7 +238,8 @@
         "Sporting Gijon"
     ],
     "Ibiza": [
-        "Ibiza"
+        "Ibiza",
+        "Ibiza Elivissa"
     ],
     "Santander": [
         "Santander",
@@ -303,13 +311,74 @@
         "Melbourne Victory (K)",
         "Melbeurne Victory (K)"
     ],
-    "": [
-        ""
+    "Brentford": [
+        "Brentford"
     ],
-    "X": [
-        "X"
+    "Tottenham": [
+        "Tottenham"
     ],
-    " Argentyna": [
-        " Argentyna"
+    "Crystal Palace": [
+        "Crystal Palace"
+    ],
+    "Fulham": [
+        "Fulham",
+        "Fulham FC"
+    ],
+    "Everton": [
+        "Everton"
+    ],
+    "Wolverhampton": [
+        "Wolverhampton"
+    ],
+    "Leicester": [
+        "Leicester",
+        "Leicester City"
+    ],
+    "Newcastle": [
+        "Newcastle"
+    ],
+    "Southampton": [
+        "Southampton"
+    ],
+    "Brighton": [
+        "Brighton"
+    ],
+    "Aston Villa": [
+        "Aston Villa"
+    ],
+    "Liverpool": [
+        "Liverpool"
+    ],
+    "Arsenal": [
+        "Arsenal"
+    ],
+    "West Ham": [
+        "West Ham"
+    ],
+    "Chelsea": [
+        "Chelsea"
+    ],
+    "Bournemouth": [
+        "Bournemouth"
+    ],
+    "Man. Utd": [
+        "Man. Utd",
+        "Manchester United"
+    ],
+    "Nottingham": [
+        "Nottingham"
+    ],
+    "Leeds": [
+        "Leeds"
+    ],
+    "Man. City": [
+        "Man. City",
+        "Manchester City"
+    ],
+    " Wolverhampton": [
+        " Wolverhampton"
+    ],
+    " Arsenal": [
+        " Arsenal"
     ]
 }

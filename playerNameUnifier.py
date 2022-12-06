@@ -16,6 +16,8 @@ class PlayerNameUnifier ():
             if unconverted_name in bad_names_list:
                 return good_name
         self.available_players_dict.update({unconverted_name: [unconverted_name]})
+        # ToDo: Some mechanism that will make assumption what team name it is, but in order to enter data to .json will ask human.
+        # e.g: Is {unconverted_name} a {real_team_name} ?: [Yes/No]
         return f"Official name not found. Add official name for {unconverted_name}"
 
     def convert_players_names(self):

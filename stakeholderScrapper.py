@@ -48,12 +48,12 @@ class stakeholderScrapper():
             names = [line for line in unparsed_string.split('\n') if "<" not in line]
             
             # ToDo: move somewhere else, eg. another function
+            with open("available_players.json") as fp:
+                dictObj = json.load(fp)
             for name in names:
-                if name in names:
+                if name in list(dictObj):
                     pass
                 else:
-                    with open("available_players.json") as fp:
-                        dictObj = json.load(fp)
                     dictObj.update({name: [name]})
                     with open("available_players.json", "w") as json_million_file:
                         json.dump(dictObj, json_million_file)
