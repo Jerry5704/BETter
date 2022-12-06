@@ -1,5 +1,5 @@
 {
-    "STS": "https://www.sts.pl/pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/2-liga/184/30867/86467/",
-    "Betcris": "https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Spain/553/21249007",
-    "Fuksiarz": "https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/laliga-2/674/1"
+    "STS": ["https://www.sts.pl/pl/zaklady-bukmacherskie/mistrzostwa-swiata-2022/turniej/2044/30341/", "https://www.sts.pl/pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/2-liga/184/30867/86467/", "https://www.sts.pl/pl/zaklady-bukmacherskie/pilka-nozna/australia/1-liga-kobiet/184/30858/88555/"],
+    "Betcris": ["https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/World/2969/21222997", "https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Spain/553/21222997", "https://www.betcris.pl/zaklady-bukmacherskie#/Soccer/Australia/9171/21222997"],
+    "Fuksiarz": ["https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/miedzynarodowe/mistrzostwa-swiata/174616/1", "https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/hiszpania/laliga-2/674/1", "https://fuksiarz.pl/zaklady-bukmacherskie/pilka-nozna/australia/1-liga-(k)/6354/1"]
 }

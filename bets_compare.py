@@ -30,7 +30,7 @@ with open("/home/jerry/BETter/Bets/" + sorted(os.listdir("/home/jerry/BETter/Bet
             best_bets[day["date"] + " " + day["a"][0] + " - " + day["c"][0]] = [[day["a"][1] * fucking_tax, stakeholder_name], [day["b"][1] * fucking_tax, stakeholder_name], [day["c"][1] * fucking_tax, stakeholder_name]]
     for name, best_tuples in best_bets.items():
         for stakeholder_name, stakeholder_dict in stakeholders:
-            try:                
+            try:      
                 if float(stakeholder_dict[name][0][0]) > best_tuples[0][0]:
                     best_tuples[0][0] = float(stakeholder_dict[name][0][0])
                     best_tuples[0][1] = stakeholder_name

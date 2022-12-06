@@ -15,6 +15,7 @@ class PlayerNameUnifier ():
         for good_name, bad_names_list in self.available_players_dict.items():
             if unconverted_name in bad_names_list:
                 return good_name
+        self.available_players_dict.update({unconverted_name: [unconverted_name]})
         return f"Official name not found. Add official name for {unconverted_name}"
 
     def convert_players_names(self):

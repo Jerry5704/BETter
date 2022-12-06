@@ -1,76 +1,315 @@
 {
-     "Cracovia": ["Cracovia", "Cracovia"],
-     "Gornik Zabrze": ["G. Zabrze", "Górnik Zabrze"],
-     "Jagiellonia Bialystok": ["Jagiellonia", "Jagiellonia Białystok"],
-     "KGHM Zaglebie Lubin": ["Zagłębie L.", "Zagłębie Lubin"],
-     "Korona Kielce": ["Korona", "Korona Kielce"],
-     "Lech Poznan": ["Lech", "Lech Poznań"],
-     "Lechia Gdansk": ["Lechia", "Lechia Gdańsk"],
-     "Legia Warszawa": ["Legia", "Legia Warszawa"],
-     "Miedz Legnica": ["Legnica", "MKS Miedź Legnica"],
-     "PGE FKS Stal Mielec": ["Mielec", "Stal Mielec"],
-     "Piast Gliwice": ["Piast", "Piast Gliwice"],
-     "Pogon Szczecin": ["Pogoń", "Pogoń Szczecin"],
-     "Radomiak Radom": ["Radomiak", "Radomiak Radom"],
-     "Rakow Czestochowa": ["Raków", "Raków Częstochowa"],
-     "Slask Wroclaw": ["Śląsk", "Śląsk Wrocław"],
-     "Warta Poznan": ["Warta", "Warta Poznań"],
-     "Widzew Lodz": ["Widzew", "Widzew Łódź"],
-     "Wisla Plock": ["W. Płock", "Wisła Płock"],
-     "Portugalia": ["Portugalia"],
-     "Urugwaj": ["Urugwaj"],
-     "Holandia": ["Holandia"],
-     "Katar": ["Katar"],
-     "Ekwador": ["Ekwador"],
-     "Senegal": ["Senegal"],
-     "Iran": ["Iran"],
-     "USA": ["USA"],
-     "Walia": ["Walia"],
-     "Anglia": ["Anglia"],
-     "Tunezja": ["Tunezja"],
-     "Francja": ["Francja"],
-     "Australia": ["Australia"],
-     "Dania": ["Dania"],
-     "Polska": ["Polska"],
-     "Argentyna": ["Argentyna"],
-     "Arabia Saudyjska": ["Arabia Saudyjska"],
-     "Meksyk": ["Meksyk"],
-     "Chorwacja": ["Chorwacja"],
-     "Belgia": ["Belgia"],
-     "Kanada": ["Kanada"],
-     "Maroko": ["Maroko"],
-     "Japonia": ["Japonia"],
-     "Hiszpania": ["Hiszpania"],
-     "Kostaryka": ["Kostaryka"],
-     "Niemcy": ["Niemcy"],
-     "Korea Poludniowa": ["Korea Południowa", "Korea Płd."],
-     "Ghana": ["Ghana"],
-     "Kamerun": ["Kamerun"],
-     "Brazylia": ["Brazylia"],
-     "Szwajcaria": ["Szwajcaria"],
-     "Serbia": ["Serbia"],
-     "Ponferradina": ["Ponferradina", "SD Ponferradina"],
-     "Burgos": ["Burgos"],
-     "Leganes": ["Leganes"],
-     "Mirandes": ["Mirandes", "CD Mirandes"],
-     "Oviedo": ["Oviedo", "Real Oviedo"],
-     "Las Palmas": ["Las Palmas", "UD Las Palmas"],
-     "Albacete": ["Albacete"],
-     "Saragossa": ["Saragossa", "Real Saragossa", "Zaragoza"],
-     "Huesca": ["Huesca", "SD Huesca"],
-     "Andorra": ["Andorra", "FC Andorra"],
-     "Cartagena": ["Cartagena", "FC Cartagena"],
-     "Villarreal B": ["Villarreal B", "Villarreal CF B"],
-     "Tenerife": ["Tenerife"],
-     "Alaves": ["Alaves", "Deportivo Alaves"],
-     "Eibar": ["Eibar", "SD Eibar"],
-     "Lugo": ["Lugo"],
-     "Gijon": ["Gijon", "Sporting Gijon"],
-     "Ibiza": ["Ibiza", "Ibiza Eivissa"],
-     "Santander": ["Santander", "Racing Santander"],
-     "Levante": ["Levante"],
-     "Malaga": ["Malaga", "Malaga CF"],
-     "Granada": ["Granada"]
-     
-
+    "Cracovia": [
+        "Cracovia",
+        "Cracovia"
+    ],
+    "Gornik Zabrze": [
+        "G. Zabrze",
+        "G\u00f3rnik Zabrze"
+    ],
+    "Jagiellonia Bialystok": [
+        "Jagiellonia",
+        "Jagiellonia Bia\u0142ystok"
+    ],
+    "KGHM Zaglebie Lubin": [
+        "Zag\u0142\u0119bie L.",
+        "Zag\u0142\u0119bie Lubin"
+    ],
+    "Korona Kielce": [
+        "Korona",
+        "Korona Kielce"
+    ],
+    "Lech Poznan": [
+        "Lech",
+        "Lech Pozna\u0144"
+    ],
+    "Lechia Gdansk": [
+        "Lechia",
+        "Lechia Gda\u0144sk"
+    ],
+    "Legia Warszawa": [
+        "Legia",
+        "Legia Warszawa"
+    ],
+    "Miedz Legnica": [
+        "Legnica",
+        "MKS Mied\u017a Legnica"
+    ],
+    "PGE FKS Stal Mielec": [
+        "Mielec",
+        "Stal Mielec"
+    ],
+    "Piast Gliwice": [
+        "Piast",
+        "Piast Gliwice"
+    ],
+    "Pogon Szczecin": [
+        "Pogo\u0144",
+        "Pogo\u0144 Szczecin"
+    ],
+    "Radomiak Radom": [
+        "Radomiak",
+        "Radomiak Radom"
+    ],
+    "Rakow Czestochowa": [
+        "Rak\u00f3w",
+        "Rak\u00f3w Cz\u0119stochowa"
+    ],
+    "Slask Wroclaw": [
+        "\u015al\u0105sk",
+        "\u015al\u0105sk Wroc\u0142aw"
+    ],
+    "Warta Poznan": [
+        "Warta",
+        "Warta Pozna\u0144"
+    ],
+    "Widzew Lodz": [
+        "Widzew",
+        "Widzew \u0141\u00f3d\u017a"
+    ],
+    "Wisla Plock": [
+        "W. P\u0142ock",
+        "Wis\u0142a P\u0142ock"
+    ],
+    "Portugalia": [
+        "Portugalia"
+    ],
+    "Urugwaj": [
+        "Urugwaj"
+    ],
+    "Holandia": [
+        "Holandia"
+    ],
+    "Katar": [
+        "Katar"
+    ],
+    "Ekwador": [
+        "Ekwador"
+    ],
+    "Senegal": [
+        "Senegal"
+    ],
+    "Iran": [
+        "Iran"
+    ],
+    "USA": [
+        "USA"
+    ],
+    "Walia": [
+        "Walia"
+    ],
+    "Anglia": [
+        "Anglia"
+    ],
+    "Tunezja": [
+        "Tunezja"
+    ],
+    "Francja": [
+        "Francja"
+    ],
+    "Australia": [
+        "Australia"
+    ],
+    "Dania": [
+        "Dania"
+    ],
+    "Polska": [
+        "Polska"
+    ],
+    "Argentyna": [
+        "Argentyna"
+    ],
+    "Arabia Saudyjska": [
+        "Arabia Saudyjska"
+    ],
+    "Meksyk": [
+        "Meksyk"
+    ],
+    "Chorwacja": [
+        "Chorwacja"
+    ],
+    "Belgia": [
+        "Belgia"
+    ],
+    "Kanada": [
+        "Kanada"
+    ],
+    "Maroko": [
+        "Maroko"
+    ],
+    "Japonia": [
+        "Japonia"
+    ],
+    "Hiszpania": [
+        "Hiszpania"
+    ],
+    "Kostaryka": [
+        "Kostaryka"
+    ],
+    "Niemcy": [
+        "Niemcy"
+    ],
+    "Korea Poludniowa": [
+        "Korea Po\u0142udniowa",
+        "Korea P\u0142d."
+    ],
+    "Ghana": [
+        "Ghana"
+    ],
+    "Kamerun": [
+        "Kamerun"
+    ],
+    "Brazylia": [
+        "Brazylia"
+    ],
+    "Szwajcaria": [
+        "Szwajcaria"
+    ],
+    "Serbia": [
+        "Serbia"
+    ],
+    "Ponferradina": [
+        "Ponferradina"
+    ],
+    "Burgos": [
+        "Burgos"
+    ],
+    "Leganes": [
+        "Leganes"
+    ],
+    "Mirandes": [
+        "Mirandes",
+        "CD Mirandes"
+    ],
+    "Oviedo": [
+        "Oviedo",
+        "Real Oviedo"
+    ],
+    "Las Palmas": [
+        "Las Palmas",
+        "UD Las Palmas"
+    ],
+    "Albacete": [
+        "Albacete"
+    ],
+    "Saragossa": [
+        "Saragossa",
+        "Zaragoza",
+        "Real Saragossa"
+    ],
+    "Huesca": [
+        "Huesca",
+        "SD Huesca"
+    ],
+    "Andorra": [
+        "Andorra",
+        "FC Andorra"
+    ],
+    "Cartagena": [
+        "Cartagena",
+        "FC Cartagena"
+    ],
+    "Villarreal B": [
+        "Villarreal B",
+        "Villarreal CF B"
+    ],
+    "Tenerife": [
+        "Tenerife"
+    ],
+    "Alaves": [
+        "Alaves",
+        "Deportivo Alaves"
+    ],
+    "Eibar": [
+        "Eibar"
+    ],
+    "Lugo": [
+        "Lugo"
+    ],
+    "Gijon": [
+        "Gijon",
+        "Sporting Gijon"
+    ],
+    "Ibiza": [
+        "Ibiza"
+    ],
+    "Santander": [
+        "Santander",
+        "Racing Santander"
+    ],
+    "Levante": [
+        "Levante"
+    ],
+    "Malaga": [
+        "Malaga"
+    ],
+    "Granada": [
+        "Granada"
+    ],
+    "Melbourne City": [
+        "Melbourne City",
+        "Melbeurne City (kobiety)",
+        "Melbourne City (kobiety)",
+        "Melbourne City (K)"
+    ],
+    "Newcastle Jets": [
+        "Newcastle Jets",
+        "Newcastle Jets (kobiety)",
+        "Newcastle Jets (Kobiety)",
+        "Newcastle (K)"
+    ],
+    "Canberra Utd": [
+        "Canberra Utd",
+        "Canberra United (Kobiety)",
+        "Canberra Utd (K)"
+    ],
+    "Wellington Phoenix": [
+        "Wellington Phoenix",
+        "Phoenix FC (Kobiety)",
+        "Wellington Phoenix FC (Kobiety)",
+        "Wellington Phoenix (K)"
+    ],
+    "Sydney FC": [
+        "Sydney FC",
+        "Western Sydney Wanderers (Kobiety)",
+        "Sydney FC (Kobiety)",
+        "FC Sydney (K)"
+    ],
+    "Brisbane Roar": [
+        "Brisbane Roar",
+        "Brisbane Roar (Kobiety)",
+        "Brisbane Roar (kobiety)",
+        "Brisbane Roar (K)"
+    ],
+    "Western Sydney": [
+        "Western Sydney",
+        "Western Sydney (Kobiety)",
+        "WS Wanderers (K)"
+    ],
+    "Adelaide Utd": [
+        "Adelaide Utd",
+        "Adelaide United (Kobiety)",
+        "Adelaide Utd (K)"
+    ],
+    "Perth Glory": [
+        "Perth Glory",
+        "Perth Glory (Kobiety)",
+        "Perth Glory (kobiety)",
+        "Perth Glory (K)"
+    ],
+    "Melbeurne Victory": [
+        "Melbeurne Victory",
+        "Melbourne Victory (Kobiety)",
+        "Melbourne Victory (K)",
+        "Melbeurne Victory (K)"
+    ],
+    "": [
+        ""
+    ],
+    "X": [
+        "X"
+    ],
+    " Argentyna": [
+        " Argentyna"
+    ]
 }

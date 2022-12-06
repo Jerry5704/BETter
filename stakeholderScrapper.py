@@ -9,36 +9,56 @@ import re
 import time
 import itertools
 import datetime
+import json
 
 class stakeholderScrapper():
-    def __init__(self, name_of_stakeholder, url):
+    def __init__(self, name_of_stakeholder, list_of_urls):
         self.bets = []
         self.name_of_stakeholder = name_of_stakeholder
-        self.url = url
+        self.list_of_urls = list_of_urls
         self.driver = uc.Chrome()
 
+
         if self.name_of_stakeholder == "STS":
-            self.driver.get(self.url)
-            self.sts()
+            for url in self.list_of_urls:
+                print(url)
+                self.driver.get(url)
+                self.sts()
         elif self.name_of_stakeholder == "Betcris":
-            self.driver.get(self.url)
-            self.betcris()
+            for url in self.list_of_urls:
+                print(url)
+                self.driver.get(url)
+                self.betcris()
         elif self.name_of_stakeholder == "Fuksiarz":
-            self.driver.get(self.url)
-            self.fuksiarz()
+            for url in self.list_of_urls:
+                print(url)
+                self.driver.get(url)
+                self.fuksiarz()
         else:
             print(self.name_of_stakeholder + " stakeholder not found!")
             self.bets.append("Not implemented yet!")
 
-        playerNameUnifier = PlayerNameUnifier(self.bets)
+        self.playerNameUnifier = PlayerNameUnifier(self.bets)
         
     def sts(self):
-        # ToDo: find by something unique instead of prematch_*
         bet_tabs = self.driver.find_element(By.CLASS_NAME, "bet_tab").find_elements(By.CLASS_NAME, "col3")
         for tab in bet_tabs:
             unparsed_string = tab.find_element(By.CLASS_NAME, "subTable").get_attribute("innerHTML")
             stakes = [float(re.sub(r'[^0-9.]', '', line)) for line in unparsed_string.split('\n') if "<span>" in line]
             names = [line for line in unparsed_string.split('\n') if "<" not in line]
+            
+            # ToDo: move somewhere else, eg. another function
+            for name in names:
+                if name in names:
+                    pass
+                else:
+                    with open("available_players.json") as fp:
+                        dictObj = json.load(fp)
+                    dictObj.update({name: [name]})
+                    with open("available_players.json", "w") as json_million_file:
+                        json.dump(dictObj, json_million_file)
+                    
+            
             date = unparsed_string[unparsed_string.find("oppty_end_date") + 27 : unparsed_string.find("oppty_end_date") + 37] + " " + unparsed_string[unparsed_string.find("oppty_end_date") + 77 : unparsed_string.find("oppty_end_date") + 82]
             self.bets.append(({"date": date,
                                "a": [names[1], stakes[0], False],
@@ -82,9 +102,10 @@ class stakeholderScrapper():
                 stakes_b.append(match_stake_b)
             for match_stake_draw in matches[5::7]:
                 stakes_draw.append(match_stake_draw)
-            
         count = 0
         for _ in dates, names_a, names_b, stakes_a, stakes_b, stakes_draw:
+            if count == len(dates):
+                return
             self.bets.append(({"date": dates[count],
             "a": [names_a[count], float(stakes_a[count]), False],
             "b": ["X", float(stakes_draw[count]), False],
@@ -92,8 +113,8 @@ class stakeholderScrapper():
             count += 1
 
     def fuksiarz(self):
+        time.sleep(5)
         bet_tabs = self.driver.find_element(By.XPATH, "/html/body/div[3]/div[3]/div[1]/div[2]/div[3]/div/div/div[3]/partial[4]/div/div/div/div[2]/div[2]/div[3]").text.split('\n')
-        
         if "Idź do wydarzenia" in bet_tabs:
             self.delete_idz_do_wydarzenia_in_fuksiarz(bet_tabs)
 
